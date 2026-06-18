@@ -1,0 +1,13 @@
+# Gradle
+.gradle
+/build
+
+# IDE
+*.iml
+/.idea/*
+
+# Local configuration (machine-specific, e.g. sdk.dir)
+local.properties
+
+# OS
+.DS_Store

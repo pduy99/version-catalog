@@ -1,0 +1,273 @@
+[versions]
+# Toolchain
+agp = "9.2.1"
+kotlin = "2.3.21"
+ksp = "2.3.9"
+composePlugin = "1.10.0"
+
+# SDK
+minSdk = "24"
+compileSdk = "36"
+
+# AndroidX core / UI
+activityCompose = "1.13.0"
+appcompat = "1.7.1"
+composeBom = "2026.05.01"
+composeNavigation = "2.8.9"
+coreKtx = "1.19.0"
+datastore = "1.2.0"
+desugarJdkLibs = "2.1.5"
+documentFile = "1.1.0"
+exifInterface = "1.3.7"
+googleFonts = "1.6.7"
+lifecycle = "2.10.0"
+material = "1.14.0"
+material3 = "1.4.0"
+nav3Core = "1.1.0"
+nav3Material = "1.3.0-alpha08"
+paletteKtx = "1.0.0"
+room = "2.8.4"
+sqliteBundled = "2.5.0-alpha11"
+work = "2.11.2"
+
+# AndroidX Hilt
+androidxHilt = "1.3.0"
+
+# Dagger Hilt
+hilt = "2.59.2"
+
+# Koin
+koin = "4.2.1"
+koinAnnotations = "2.0.0"
+
+# Kotlinx
+kotlinxCollectionsImmutable = "0.4.0"
+kotlinxCoroutines = "1.11.0"
+kotlinxDatetime = "0.6.1"
+kotlinxSerialization = "1.11.0"
+
+# Networking
+ktor = "3.0.0"
+okhttp = "4.12.0"
+
+# Persistence (legacy sqldelight 1.x, kept for HeliosTranslator)
+sqldelight = "1.5.4"
+
+# Imaging / media
+cameraX = "1.5.0-alpha06"
+coil = "2.7.0"
+lottie = "6.4.1"
+
+# ML Kit
+mlkitLanguageId = "17.0.6"
+mlkitTextRecognition = "16.0.1"
+mlkitTranslate = "17.0.3"
+
+# Subly SDK
+sublySdk = "0.0.1"
+
+# KMP / Apple interop
+skie = "0.10.12"
+
+# Logging
+kermit = "2.0.5"
+slf4jSimple = "2.0.9"
+
+# Accompanist
+accompanist = "0.37.0"
+
+# Testing
+assertk = "0.25"
+cucumber = "7.14.0" # Do not bump this version
+espressoCore = "3.7.0"
+junit = "4.13.2"
+junitVersion = "1.3.0"
+mockito = "5.14.2"
+mockitoKotlin = "5.4.0"
+turbine = "1.1.0"
+uiautomator = "2.3.0"
+
+# Gradle plugins (non-toolchain)
+gradleVersions = "0.51.0"
+versionCatalogUpdate = "0.8.4"
+
+[libraries]
+# ---- AndroidX core ----
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+androidx-documentfile = { group = "androidx.documentfile", name = "documentfile", version.ref = "documentFile" }
+androidx-exifinterface = { group = "androidx.exifinterface", name = "exifinterface", version.ref = "exifInterface" }
+androidx-palette = { group = "androidx.palette", name = "palette-ktx", version.ref = "paletteKtx" }
+desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# ---- AndroidX Lifecycle ----
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodelNavigation3 = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-navigation3", version.ref = "lifecycle" }
+
+# ---- Compose (BOM-managed) ----
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-toolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-textGoogleFonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts" }
+androidx-compose-ui-testJunit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+androidx-compose-material3-adaptiveNavigationSuite = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite" }
+androidx-compose-material3-adaptiveLayout = { group = "androidx.compose.material3.adaptive", name = "adaptive-layout" }
+
+# ---- Compose (explicit-version, outside BOM) ----
+androidx-compose-material3-adaptiveNavigation3 = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation3", version.ref = "nav3Material" }
+androidx-compose-material3-standalone = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+androidx-compose-material3-windowSizeClassStandalone = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "material3" }
+
+# ---- Navigation ----
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
+androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "composeNavigation" }
+androidx-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "nav3Core" }
+androidx-navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "nav3Core" }
+
+# ---- Room ----
+androidx-room = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "sqliteBundled" }
+
+# ---- WorkManager ----
+androidx-work-runtime = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
+
+# ---- AndroidX Hilt ----
+androidx-hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidxHilt" }
+androidx-hilt-navigationCompose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" }
+androidx-hilt-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "androidxHilt" }
+
+# ---- Dagger Hilt ----
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-androidCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-androidTesting = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+# ---- Koin ----
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-androidxWorkmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin" }
+koin-composeNavigation3 = { group = "io.insert-koin", name = "koin-compose-navigation3", version.ref = "koin" }
+koin-composeViewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-coreViewmodel = { group = "io.insert-koin", name = "koin-core-viewmodel", version.ref = "koin" }
+
+# ---- Kotlin / Kotlinx ----
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+kotlinx-collectionsImmutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-playServices = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinxSerialization" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+
+# ---- Ktor ----
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-client-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
+ktor-client-contentNegotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-serializationKotlinxJson = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# ---- Networking ----
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+
+# ---- SQLDelight 1.x (legacy) ----
+sqldelight-androidDriver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqldelight" }
+sqldelight-coroutinesExtensions = { group = "com.squareup.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight" }
+sqldelight-nativeDriver = { group = "com.squareup.sqldelight", name = "native-driver", version.ref = "sqldelight" }
+sqldelight-runtime = { group = "com.squareup.sqldelight", name = "runtime", version.ref = "sqldelight" }
+
+# ---- Imaging / media ----
+camerax-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "cameraX" }
+camerax-compose = { group = "androidx.camera", name = "camera-compose", version.ref = "cameraX" }
+camerax-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraX" }
+camerax-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraX" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
+
+# ---- ML Kit ----
+mlkit-languageId = { group = "com.google.mlkit", name = "language-id", version.ref = "mlkitLanguageId" }
+mlkit-textRecognition = { group = "com.google.mlkit", name = "text-recognition", version.ref = "mlkitTextRecognition" }
+mlkit-textRecognitionChinese = { group = "com.google.mlkit", name = "text-recognition-chinese", version.ref = "mlkitTextRecognition" }
+mlkit-textRecognitionDevanagari = { group = "com.google.mlkit", name = "text-recognition-devanagari", version.ref = "mlkitTextRecognition" }
+mlkit-textRecognitionJapanese = { group = "com.google.mlkit", name = "text-recognition-japanese", version.ref = "mlkitTextRecognition" }
+mlkit-textRecognitionKorean = { group = "com.google.mlkit", name = "text-recognition-korean", version.ref = "mlkitTextRecognition" }
+mlkit-translate = { group = "com.google.mlkit", name = "translate", version.ref = "mlkitTranslate" }
+
+# ---- Accompanist ----
+accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
+
+# ---- Logging ----
+slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4jSimple" }
+touchlab-kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
+
+# ---- Testing ----
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "uiautomator" }
+assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version.ref = "assertk" }
+cucumber-android = { group = "io.cucumber", name = "cucumber-android", version.ref = "cucumber" }
+cucumber-java = { group = "io.cucumber", name = "cucumber-java", version.ref = "cucumber" }
+cucumber-junit = { group = "io.cucumber", name = "cucumber-junit", version.ref = "cucumber" }
+cucumber-picocontainer = { group = "io.cucumber", name = "cucumber-picocontainer", version.ref = "cucumber" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockito-android = { group = "org.mockito", name = "mockito-android", version.ref = "mockito" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockitoKotlin" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+
+[plugins]
+# ---- Android ----
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-kotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-test = { id = "com.android.test", version.ref = "agp" }
+
+# ---- Kotlin ----
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-cocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# ---- Compose Multiplatform ----
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "composePlugin" }
+
+# ---- KSP ----
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# ---- Hilt ----
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+# ---- Room ----
+room = { id = "androidx.room", version.ref = "room" }
+
+# ---- SKIE ----
+skie = { id = "co.touchlab.skie", version.ref = "skie" }
+
+# ---- SQLDelight ----
+sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqldelight" }
+
+# ---- Utilities ----
+gradle-versions = { id = "com.github.ben-manes.versions", version.ref = "gradleVersions" }
+version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdate" }
