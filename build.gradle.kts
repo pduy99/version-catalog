@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "info.phpduy"
-version = "2026.06.00"
+version = "2026.06.01"
 
 catalog {
     versionCatalog {
@@ -26,7 +26,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("info.phpduy", "version-catalog", "2026.06.00")
+    coordinates("$group", "version-catalog", "$version")
 
     pom {
         name.set("Version Catalog")
