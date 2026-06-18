@@ -9,8 +9,9 @@ concurrency:
   group: publish-maven-central
   cancel-in-progress: false
 
+# contents: write is required to push the tag and create the GitHub release.
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   publish:
@@ -35,3 +36,26 @@ jobs:
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+
+      - name: Read project version
+        id: version
+        run: |
+          VERSION=$(./gradlew -q --no-configuration-cache properties | awk -F': ' '/^version:/ {print $2}')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Resolved project version: $VERSION"
+
+      - name: Tag and create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="v${{ steps.version.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists — skipping tag/release creation."
+          else
+            # gh creates the tag at the current commit and publishes a release
+            # page with auto-generated notes from commits since the last tag.
+            gh release create "$TAG" \
+              --target "$GITHUB_SHA" \
+              --title "$TAG" \
+              --generate-notes
+          fi
